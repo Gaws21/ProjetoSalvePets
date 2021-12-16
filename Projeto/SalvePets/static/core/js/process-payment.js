@@ -2,8 +2,6 @@ var maskCPF = IMask(document.getElementById('docNumber'), {
     mask: '000.000.000-00'
 })
 
-var cpf_tratado = maskCPF.unmaskedValue.padStart(11,0)
-
 var maskCardNumber = IMask(document.getElementById('cardNumber'), {
     mask: '0000000000000000'
 })
@@ -86,7 +84,7 @@ document.getElementById('paymentForm').addEventListener('submit', getCardToken)
 function getCardToken(event) {
     event.preventDefault()
     if (!doSubmit) {
-        document.getElementById('docNumber').value = cpf_tratado
+        document.getElementById('docNumber').value = maskCPF.unmaskedValue
         let $form = document.getElementById('paymentForm')
         window.Mercadopago.createToken($form, setCardTokenAndPay)
         return false
