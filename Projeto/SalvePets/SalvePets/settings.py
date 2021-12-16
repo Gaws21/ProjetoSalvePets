@@ -170,7 +170,7 @@ DATABASES = {
     'ENGINE':'django.contrib.gis.db.backends.postgis',
     'NAME':'salvepets',
     'USER':'postgres',
-    'PASSWORD':'salve123456',
+    'PASSWORD':POSTGIS_PASSWORD,
 	'HOST':'salvepets.cwytbkj9txjz.us-east-1.rds.amazonaws.com',
 	'PORT':'5432',
     }
